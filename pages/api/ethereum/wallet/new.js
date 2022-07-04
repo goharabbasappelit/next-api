@@ -6,8 +6,9 @@ export default function newWallet(req, res){
     const response = {
         privateKey: wallet.privateKey,
         address: wallet.address,
-        mnemonic: wallet._mnemonic().phrase
     };
+
+    //mnemonic: wallet._mnemonic().phrase
 
     res.json({ data: response });
 }
