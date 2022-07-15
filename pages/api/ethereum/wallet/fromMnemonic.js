@@ -1,7 +1,9 @@
+
 import { ethers } from "ethers";
 
-export default function newWallet(req, res){
-    const wallet = ethers.Wallet.createRandom();
+export default function fromMnemonic(req, res){
+    const {mnemonic} = req.query;
+    const wallet = ethers.Wallet.fromMnemonic(mnemonic, `m/44'/60'/0'/0/0`);
 
     const response = {
         privateKey: wallet.privateKey,
